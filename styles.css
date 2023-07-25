@@ -1,0 +1,53 @@
+
+body{ 
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background: url(bkgd.png) fixed;
+    background-repeat: no-repeat;
+    background-size: cover; 
+} 
+
+#score{
+    font-size: 500%;
+    margin-left: auto;
+}
+
+#time{
+    font-size: 500%;
+
+}
+
+.board {
+    width: 400px;
+    height: 400px;
+    margin: auto;
+    display: grid;
+    border-radius: 10px;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat (2, 1fr);
+
+    gap: 80px
+
+    
+}
+
+.hole {
+    border: 1px solid;
+    border-radius: 50%;
+    padding: 1.5rem;
+    box-shadow: 0 0 50px 15px #2c6786;
+    background-image: url(portal-hole.png);
+    position: relative;
+    overflow: hidden;
+}
+.hole .mole{
+    background-image: url(alien-mole.png);
+    width: 30%;
+    position: absolute;
+    bottom: 50%;
+    transform: translate(-50%);
+    bottom: 0;
+    animation-direction: reverse;
+    animation-timing-function: ease-in-out;
+}
+
