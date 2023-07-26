@@ -8,13 +8,20 @@
     <script defer src="js/script.js"></script>
 </head>
 <body>
-    <button id="startBtn">Start</button>
-    <button id ="newGame">New Game</button>
-    <h3>Score:</h3>
-    <h2 id="score">0</h2>
+    <div class = "button-container">
+        <button id="startBtn">Start</button>
+        <button id ="newGameBtn">New Game</button>
+    </div>
+    
+   <!-- need to fix position of Score h tags -->
+        <h4 align="right">Score:</h4>
+        <h2 align="right"id="score">0</h2>
+    
+        <h1>Time</h1>
+        <h2><font color= red id="time">10</h2> 
+       <!-- time font color changed div board and hole color*/ -->
    
-    <h1>Time</h1>
-    <h1 id="time">10</h1>
+       <!-- need to fix time font color so it doesnt affect board and hole border color -->
     <div class = "board">
         <div class="hole" id = "0"></div>
         <div class="hole" id = "1"></div>

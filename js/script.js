@@ -11,9 +11,11 @@ Extra 4: Audio
 Extra 5: MAKE LEVELS for each continued round
 */
 
-const holes = document.querySelectorAll('.hole')
-const mole = document.querySelectorAll('.mole')
-const cursor = document.querySelector('.cursor')
+const holes = document.querySelectorAll('hole')
+const mole = document.querySelectorAll('mole')
+const cursor = document.querySelector('cursor')
+
+
 document.querySelector('#score')
 document.querySelector('#time')
 
@@ -21,13 +23,22 @@ document.querySelector('#time')
 let result;
 let time;
 
-//start game functin
+//Set 2 functions to the Start button: start game and start loop for alien-mole
 function startGame(){
-    holes.forEach(hole => hole.addEventListener("click",randomHole))
+    startBtn.addEventListener('click', () =>{
+        const startBtn = document.getElementById('startBtn')
+        alert('Start button clicked')
 
+    })
+    holes.forEach(hole => hole.addEventListener("click",randomHole));
+    console.log("Game has started")
 }
 
-
+function newGame(){
+    newGameBtn.addEventListener('click',() =>{
+        const newGameBtn = document.getElementById('newGameBtn')
+    })
+}
 
 //create random function for the holes and random for mole popping out and disappearing
 function randomHole(){

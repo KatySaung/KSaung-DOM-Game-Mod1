@@ -14,7 +14,7 @@ body{
 
 #time{
     font-size: 500%;
-
+    position: top;
 }
 
 .board {
@@ -25,9 +25,7 @@ body{
     border-radius: 10px;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: repeat (2, 1fr);
-
     gap: 80px
-
     
 }
 
@@ -40,7 +38,7 @@ body{
     position: relative;
     overflow: hidden;
 }
-.hole .mole{
+.mole{
     background-image: url(alien-mole.png);
     width: 30%;
     position: absolute;
@@ -51,3 +49,23 @@ body{
     animation-timing-function: ease-in-out;
 }
 
+#newGameBtn, #startBtn {
+    padding: 10px 10px;
+    color: black;
+    background-color:lightgray;
+    border-color: white;
+    border-radius: 5px;
+    font-size: large;
+    transition: 200ms;
+}
+#newGameBtn:hover, #startBtn:hover  {
+    transform: translateY(-5px);
+}
+
+.score {
+    display: flex;
+    border: 1px solid black;
+    padding: 1rem 1rem;
+    
+
+}
