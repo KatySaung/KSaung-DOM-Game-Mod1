@@ -15,6 +15,8 @@ const holes = document.querySelectorAll('hole')
 const mole = document.querySelectorAll('mole')
 const cursor = document.querySelector('cursor')
 
+//NOT WORKING!!! - random time offset -use function declaration method arrow function
+const randomTime = (min,max) =>Math.random() * (max-min) + min;
 
 document.querySelector('#score')
 document.querySelector('#time')
@@ -23,8 +25,10 @@ document.querySelector('#time')
 let result;
 let time;
 
+
 //Set 2 functions to the Start button: start game and start loop for alien-mole
 function startGame(){
+
     startBtn.addEventListener('click', () =>{
         const startBtn = document.getElementById('startBtn')
         alert('Start button clicked')
@@ -34,17 +38,22 @@ function startGame(){
     console.log("Game has started")
 }
 
+
+const newGameBtn = document.getElementById('newGameBtn')
 function newGame(){
-    newGameBtn.addEventListener('click',() =>{
-        const newGameBtn = document.getElementById('newGameBtn')
+    newGameBtn.addEventListener('click',() =>{       
     })
 }
 
-//create random function for the holes and random for mole popping out and disappearing
-function randomHole(){
+//create random function for the holes and random for mole popping out and disappearing.Clicks have to count when only selecting mole. Not anywhere on screen, prevent cheating
+function randomHole(holes){
+    let hole = holes[i]
     for (let i =0; i<5; i++){
         let i =  Math.floor(Math.random() * holes.length)
-        let hole = holes[i]
+        console.log(hole)
+    }
+    return{
+
     }
 }
 //create function for Eventlistener in a different function from for mouse click on the squares. Use loop for moving through all the holes and if statement for if hit on mole at the hole add points to the score

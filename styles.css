@@ -18,14 +18,13 @@ body{
 }
 
 .board {
-    width: 400px;
-    height: 400px;
+    width: 552px;
+    height: 340px;
     margin: auto;
     display: grid;
     border-radius: 10px;
     grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat (2, 1fr);
-    gap: 80px
+    gap: 26px
     
 }
 
@@ -40,16 +39,18 @@ body{
 }
 .mole{
     background-image: url(alien-mole.png);
-    width: 30%;
-    position: absolute;
+    max-width: 100%;
+  
+    /* position: absolute;
     bottom: 50%;
     transform: translate(-50%);
     bottom: 0;
     animation-direction: reverse;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;  */
 }
 
-#newGameBtn, #startBtn {
+#endGameBtn, #startBtn {
+    margin-top: 50px;;
     padding: 10px 10px;
     color: black;
     background-color:lightgray;
@@ -58,7 +59,7 @@ body{
     font-size: large;
     transition: 200ms;
 }
-#newGameBtn:hover, #startBtn:hover  {
+#endGameBtn:hover, #startBtn:hover  {
     transform: translateY(-5px);
 }
 
