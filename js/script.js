@@ -1,14 +1,14 @@
 const holes = document.querySelectorAll(".hole");
 // console.log(holes);
 const mole = document.querySelectorAll(".mole");
-const endGame =document.getElementById("endBtn");
-const startGame = document.getElementById("startBtn");
+const endGame =document.getElementById("#endBtn");
+const startGame = document.getElementById("#startBtn");
 const scoreCounter = document.getElementById("score");
 const timeCounter = document.getElementById("time")
 let time = 10;
 let score = 0;
 let molePosition = 0;
-let playing = false;
+
 
 //WORKING-create function to move and remove mole randomly in holes and assign the current mole position to the current hole.
 function moveMole(){
@@ -25,11 +25,13 @@ function moveMole(){
 
 //function to set speed and trigger mole to move randomly.
 function speedMoveMole(){
+    score = 0;
+    time = 10;
     moleTimer = setInterval(moveMole,375);
     gameTimer = setInterval(timer,1000);
 
 }
-speedMoveMole();
+
 
 //function to click on the mole at current mole position and score points. NEED TO FIND WAY TO STOP CHEATING WITH MULTIPLE CLICKS.
 holes.forEach((hole) => {
@@ -50,24 +52,22 @@ function timer(){
     if ((time) <= 0) {
         alert("GAME OVER");
         clearInterval(gameTimer);
-        clearInterval(moleTimer);
-        
+        clearInterval(moleTimer);    
+    }   
 }
-}
-// (min,max) =>Math.random() * (max-min) + min;
 
-//NOT WORKING: START TIME BUTTON create start function 
+//Click Start Button to Start Game
 function startTime(){
-    startBtn.addEventListener("click", startTime);
-    startTime();
-    playing = true;
-
+    speedMoveMole();
 }
-//NOT WORKING, GAME NOT STOPPING!!! - create end function 
+startBtn.addEventListener("click", startTime);
+
+//Click End Button to Stop Game
 function endTime(){
     clearInterval(gameTimer);
-    clearInterval(moleTimer);
-    endTime();
-endBtn.addEventListener("click", endTime);
-playing = false;
+    clearInterval(moleTimer); 
 }
+endBtn.addEventListener("click", endTime);
+
+//Click Reset Button to refresh page
+
