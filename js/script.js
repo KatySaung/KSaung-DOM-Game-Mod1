@@ -1,81 +1,63 @@
-/*Your dom project must meet these requirements:
-1-If you build a you Game must have::
-    a-Must be a two player game.
-    b-A win state(High Score) 
-    c-A lose state.
-    d-A way to keep playing if the game is not over.
-    e-Multiple rounds to play: A round must begin, end, and there must be a way to check if the game should continue or the overall game is won or lost 
-Extra 1: A way to Reset and Play Again.
-Extra 2: CSS to give your game a personal and fun style
-Extra 4: Audio
-Extra 5: MAKE LEVELS for each continued round
-*/
+const holes = document.querySelectorAll(".hole");
+// console.log(holes);
+const mole = document.querySelectorAll(".mole");
+const endGame =document.getElementById("endGamebtn");
+const startGame = document.getElementById("startbtn");
+const cursor = document.getElementById("cursor");
+const scoreCounter = document.getElementById("score");
+let score = 0;
+let molePosition = 0;
 
-const holes = document.querySelectorAll('hole')
-const mole = document.querySelectorAll('mole')
-const cursor = document.querySelector('cursor')
 
 //NOT WORKING!!! - random time offset -use function declaration method arrow function
-const randomTime = (min,max) =>Math.random() * (max-min) + min;
+function time = 
 
-document.querySelector('#score')
-document.querySelector('#time')
+// (min,max) =>Math.random() * (max-min) + min;
 
-//Global variables
-let result;
-let time;
+// document.querySelector('#score')
+// document.querySelector('#time')
 
-
-//Set 2 functions to the Start button: start game and start loop for alien-mole
-function startGame(){
-
-    startBtn.addEventListener('click', () =>{
-        const startBtn = document.getElementById('startBtn')
-        alert('Start button clicked')
-
-    })
-    holes.forEach(hole => hole.addEventListener("click",randomHole));
-    console.log("Game has started")
-}
-
-
-const newGameBtn = document.getElementById('newGameBtn')
-function newGame(){
-    newGameBtn.addEventListener('click',() =>{       
-    })
-}
-
-//create random function for the holes and random for mole popping out and disappearing.Clicks have to count when only selecting mole. Not anywhere on screen, prevent cheating
-function randomHole(holes){
-    let hole = holes[i]
-    for (let i =0; i<5; i++){
-        let i =  Math.floor(Math.random() * holes.length)
-        console.log(hole)
-    }
-    return{
-
-    }
-}
-//create function for Eventlistener in a different function from for mouse click on the squares. Use loop for moving through all the holes and if statement for if hit on mole at the hole add points to the score
-//holes.forEach
-    holes.addEventlistener('clicked', () => {
-        //if statement
-        //score and result
-    })
-
-
-//Create function for timer of mole movement.Set on timer for how fast mole will move to each hole and attach the function to Start button.
+//WORKING-create function to move and remove mole randomly in holes and assign the current mole position to the current hole.
 function moveMole(){
-   
-    //create variable for timer and use setInterval for the holes. put an ID to variable so can assign to Start button
-   
+    holes.forEach((hole) => {
+        hole.classList.remove("mole");
+    });
+    // console.log(Math.floor(Math.random() * 6)); 
+    let randomHole = holes[Math.floor(Math.random() * 6)]; 
+    randomHole.classList.add("mole");
+    molePosition = randomHole.id;
+  
 }
-//call the randomMole function here and test on DOM
-moveMole()
+// test function to moveMole();
+
+//function to set speed and trigger mole to move randomly.
+function speedMoveMole(){
+    gameTimer = setInterval(moveMole,375);
+}
+speedMoveMole();
+
+//function to click on the mole at current mole position and score points. NEED TO FIND WAY TO STOP CHEATING WITH MULTIPLE CLICKS.
+holes.forEach((hole) => {
+    hole.addEventListener("click", () =>{
+        if (hole.id == molePosition){
+            score++;
+            scoreCounter.innerText = score;
+            hole.classList.remove("mole");
+        }
+    });
+});
+
+// //create random function for the holes and random for mole popping out and disappearing.Clicks have to count when only selecting mole. Not anywhere on screen, prevent cheating
+// function randomHole(holes){
+//     let hole = holes[i]
+//     for (let i =0; i<5; i++){
+//         let i =  Math.floor(Math.random() * holes.length)
+//         console.log(hole)
+//     }
+//     return{
 
 //Create function of countdown. use setInterval
-function time(){
+
     //clear timer to reset 
     //create alert to user Game Over with player points
     //clear alert
-}

@@ -49,7 +49,7 @@ body{
     animation-timing-function: ease-in-out;  */
 }
 
-#endGameBtn, #startBtn {
+#endBtn, #startBtn {
     margin-top: 50px;;
     padding: 10px 10px;
     color: black;
@@ -59,7 +59,7 @@ body{
     font-size: large;
     transition: 200ms;
 }
-#endGameBtn:hover, #startBtn:hover  {
+#endBtn:hover, #startBtn:hover  {
     transform: translateY(-5px);
 }
 
