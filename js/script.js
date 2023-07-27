@@ -5,14 +5,11 @@ const endGame =document.getElementById("endGamebtn");
 const startGame = document.getElementById("startbtn");
 const cursor = document.getElementById("cursor");
 const scoreCounter = document.getElementById("score");
+const timeCounter = document.getElementById("time")
+let time = 10;
 let score = 0;
 let molePosition = 0;
 
-
-//NOT WORKING!!! - random time offset -use function declaration method arrow function
-function time = 
-
-// (min,max) =>Math.random() * (max-min) + min;
 
 // document.querySelector('#score')
 // document.querySelector('#time')
@@ -32,7 +29,9 @@ function moveMole(){
 
 //function to set speed and trigger mole to move randomly.
 function speedMoveMole(){
-    gameTimer = setInterval(moveMole,375);
+    moleTimer = setInterval(moveMole,375);
+    gameTimer = setInterval(timer,1000);
+
 }
 speedMoveMole();
 
@@ -46,6 +45,17 @@ holes.forEach((hole) => {
         }
     });
 });
+
+//create Game Timer and stop time at zero
+function timer(){
+    time--;
+    timeCounter.innerText = time;
+    if (time === 0) {
+        clearInterval(gameTimer);
+}
+}
+// (min,max) =>Math.random() * (max-min) + min;
+
 
 // //create random function for the holes and random for mole popping out and disappearing.Clicks have to count when only selecting mole. Not anywhere on screen, prevent cheating
 // function randomHole(holes){
