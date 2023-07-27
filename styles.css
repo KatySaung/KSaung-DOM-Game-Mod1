@@ -50,7 +50,7 @@ body{
     animation-timing-function: ease-in-out;   */
 }
 
-#endBtn, #startBtn {
+#endBtn, #startBtn, #reStartBtn {
     margin-top: 50px;;
     padding: 10px 10px;
     color: black;
