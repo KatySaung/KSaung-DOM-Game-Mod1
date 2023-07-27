@@ -1,9 +1,8 @@
 const holes = document.querySelectorAll(".hole");
 // console.log(holes);
 const mole = document.querySelectorAll(".mole");
-const endGame =document.getElementById("endGamebtn");
-const startGame = document.getElementById("startbtn");
-const cursor = document.getElementById("cursor");
+const endGame =document.getElementById("endBtn");
+const startGame = document.getElementById("startBtn");
 const scoreCounter = document.getElementById("score");
 const timeCounter = document.getElementById("time")
 let time = 10;
@@ -46,28 +45,29 @@ holes.forEach((hole) => {
     });
 });
 
-//create Game Timer and stop time at zero
+//create Game Timer and stop timer at zero and end both mole and timer.//NOT WORKING-STOP TIME SHOWS -1 after CLEAR ALERT GAME OVER.
 function timer(){
     time--;
     timeCounter.innerText = time;
-    if (time === 0) {
+    if (Math.floor(time <= 0)) {
+        // alert("GAME OVER");
         clearInterval(gameTimer);
+        clearInterval(moleTimer);
+        
 }
 }
 // (min,max) =>Math.random() * (max-min) + min;
 
+//NOTWORKING: START TIME BUTTON create start function 
+function startTime(){
+    startBtn.addEventListener("click", startTime);
+    startTime();
 
-// //create random function for the holes and random for mole popping out and disappearing.Clicks have to count when only selecting mole. Not anywhere on screen, prevent cheating
-// function randomHole(holes){
-//     let hole = holes[i]
-//     for (let i =0; i<5; i++){
-//         let i =  Math.floor(Math.random() * holes.length)
-//         console.log(hole)
-//     }
-//     return{
-
-//Create function of countdown. use setInterval
-
-    //clear timer to reset 
-    //create alert to user Game Over with player points
-    //clear alert
+}
+//NOT WORKING, GAME NOT STOPPING!!! - create end function 
+function endTime(){
+    clearInterval(gameTimer);
+    clearInterval(moleTimer);
+    endTime();
+endBtn.addEventListener("click", endTime);
+}
