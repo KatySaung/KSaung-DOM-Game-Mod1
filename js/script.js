@@ -40,20 +40,20 @@ holes.forEach((hole) => {
             score++;
             scoreCounter.innerText = score;
             if (score === 1){
-                alert ("YOU got " + score +"!"+ " YOU ARE AWESOME");
+                alert ("YOU got " + score +"!"+ " YOU ARE AWESOME. YOU WIN. You can continue or click Restart and then Start for a new game. Thanks for playing!");
             }
             hole.classList.remove("mole");
  } })
     
 });
 
-//create Game Timer and stop timer at zero and end both mole and timer.//NOT WORKING-STOP TIME SHOWS -1 after CLEAR ALERT GAME OVER.
+//Game Timer and stop timer at zero and end both mole and timer.
 function timer(){
     time--;
     console.log(time)
     timeCounter.innerText = time;
     if ((time) <= 0) {
-        alert("GAME OVER");
+        alert("GAME OVER. Your score is " + score +"!" + " That's Awesome Sauce!");
         clearInterval(gameTimer);
         clearInterval(moleTimer);    
     }  
