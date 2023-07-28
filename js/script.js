@@ -10,7 +10,7 @@ let score = 0;
 let molePosition = 0;
 let gameStart = false;
 
-//WORKING-create function to move and remove mole randomly in holes and assign the current mole position to the current hole.
+//Function to move and remove mole randomly from holes
 function moveMole(){
     holes.forEach((hole) => {
         hole.classList.remove("mole");
@@ -27,7 +27,7 @@ function moveMole(){
 function speedMoveMole(){
     score = 0;
     time = 10;
-    moleTimer = setInterval(moveMole,500);
+    moleTimer = setInterval(moveMole,600);
     gameTimer = setInterval(timer,1000);
    
 } 
