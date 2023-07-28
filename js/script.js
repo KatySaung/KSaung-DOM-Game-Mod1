@@ -27,8 +27,9 @@ function moveMole(){
 function speedMoveMole(){
     score = 0;
     time = 10;
-    moleTimer = setInterval(moveMole,375);
+    moleTimer = setInterval(moveMole,500);
     gameTimer = setInterval(timer,1000);
+   
 } 
 
 
@@ -38,6 +39,9 @@ holes.forEach((hole) => {
         if (hole.id == molePosition){
             score++;
             scoreCounter.innerText = score;
+            if (score === 1){
+                alert ("YOU got " + score +"!"+ " YOU ARE AWESOME");
+            }
             hole.classList.remove("mole");
  } })
     
@@ -64,8 +68,6 @@ function startTime(){
     }
 }
 startBtn.addEventListener("click", startTime);
-// startBtn.removeEventListener("click", startTime);
-
 
 //Click End Button to Stop Game
 function endTime(){
@@ -73,11 +75,9 @@ function endTime(){
     clearInterval(moleTimer); 
 }
 endBtn.addEventListener("click", endTime);
-// endBtn.removeEventListener("click", endTime);
 
-//Click Reset Button to refresh page
+//Click Restart Button to start new game
 function reStartTime(){
     window.location.reload();
-
 }
 reStartBtn.addEventListener("click",reStartTime);
