@@ -53,7 +53,7 @@ function timer(){
     console.log(time)
     timeCounter.innerText = time;
     if ((time) <= 0) {
-        alert("GAME OVER. Your score is " + score +"!" + " That's Awesome Sauce!");
+        alert("GAME OVER. Your score is " + score +"!" + " Awesome Sauce for trying Whack a Robo-Mole!");
         clearInterval(gameTimer);
         clearInterval(moleTimer);    
     }  
