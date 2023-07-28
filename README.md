@@ -1,6 +1,7 @@
 # **Whack a Mole Game in Javascript, HTML, CSS**
 ## _A fun game as a beginner project_
-[Link](https://github.com/KatySaung/KSaung-DOM-Game-Mod1/)
+[Link to Github](https://github.com/KatySaung/KSaung-DOM-Game-Mod1/)
+[Link to Game](https://katysaung.github.io/KSaung-DOM-Game-Mod1)
 ---
 ### Description
 #### A fun starter project for anyone learning to code. This game will introduce you to object-oriented programming, variables, functions, arrays, styling and more. This is a great warm-up on using HTML, CSS and Javascript and working with the DOM.
